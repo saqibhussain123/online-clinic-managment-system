@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8093A881-0B0E-4EF7-B3EA-490E54A6E72A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication7</RootNamespace>
+    <AssemblyName>WebApplication7</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>8cc43be6</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\bootstrap.css" />
+    <Content Include="Content\assets\css\maicons.css" />
+    <Content Include="Content\assets\css\theme.css" />
+    <Content Include="Content\assets\fonts\maicons.svg" />
+    <Content Include="Content\assets\img\010921271017.jpg" />
+    <Content Include="Content\assets\img\070910353299.jpg" />
+    <Content Include="Content\assets\img\110136042857.jpg" />
+    <Content Include="Content\assets\img\1110395906310.jpg" />
+    <Content Include="Content\assets\img\150514061250.png" />
+    <Content Include="Content\assets\img\150542002183.png" />
+    <Content Include="Content\assets\img\150909482175.png" />
+    <Content Include="Content\assets\img\180132281494.jpg" />
+    <Content Include="Content\assets\img\1902273656000.jpg" />
+    <Content Include="Content\assets\img\230523290324.jpg" />
+    <Content Include="Content\assets\img\230609122499.png" />
+    <Content Include="Content\assets\img\230627300327.jpg" />
+    <Content Include="Content\assets\img\260323450625.jpg" />
+    <Content Include="Content\assets\img\260554522603.png" />
+    <Content Include="Content\assets\img\2705505766750.jpg" />
+    <Content Include="Content\assets\img\2705514687460.jpg" />
+    <Content Include="Content\assets\img\2705520333650.jpg" />
+    <Content Include="Content\assets\img\2705521043560.jpg" />
+    <Content Include="Content\assets\img\2909082228290.jpg" />
+    <Content Include="Content\assets\img\ajax-loader.gif" />
+    <Content Include="Content\assets\img\app_store.svg" />
+    <Content Include="Content\assets\img\banner-pattern.svg" />
+    <Content Include="Content\assets\img\bg-doctor.png" />
+    <Content Include="Content\assets\img\bg_image_1.jpg" />
+    <Content Include="Content\assets\img\blog\blog_1.jpg" />
+    <Content Include="Content\assets\img\blog\blog_2.jpg" />
+    <Content Include="Content\assets\img\blog\blog_3.jpg" />
+    <Content Include="Content\assets\img\blog\blog_4.jpg" />
+    <Content Include="Content\assets\img\blog\blog_5.jpg" />
+    <Content Include="Content\assets\img\blog\istockphoto-1408160015-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\about-bg.jpg" />
+    <Content Include="Content\assets\img\doctors\appointment-image.jpg" />
+    <Content Include="Content\assets\img\doctors\author-image.jpg" />
+    <Content Include="Content\assets\img\doctors\doctor_1.jpg" />
+    <Content Include="Content\assets\img\doctors\doctor_2.jpg" />
+    <Content Include="Content\assets\img\doctors\doctor_3.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1006430612-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1015246304-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1133624833-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1144801743-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1144992388-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1150384618-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1167824451-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1178263882-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1203011083-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1203011090-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1205850790-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1215678087-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1218905934-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1222476826-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1227487019-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1248083964-1024x1024.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1270095995-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1272101078-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1277148425-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1278834619-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1288995619-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1292012176-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1295782888-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1297936018-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1311429423-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1311515424-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1320127070-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1320799464-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1326215389-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1340715286-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1341693363-640x640.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1342275996-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1346675527-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1346718776-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1348008311-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1355302972-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1371843359-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1383880970-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1388324716-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1392376001-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1393709660-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1395386886-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1396308301-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1412949530-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1436624925-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1438599465-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1439901267-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1443049058-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1443050107-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1455018058-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1478711302-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1488874743-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1490640358-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1493520286-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1497528974-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1500043821-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-175264754-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-2023972397-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-469046110-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-496972049-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-519559505-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-537338744-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-619263856-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-925425944-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-931906832-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-934866046-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\istockphoto-945007384-612x612.jpg" />
+    <Content Include="Content\assets\img\doctors\news-image.jpg" />
+    <Content Include="Content\assets\img\doctors\news-image1.jpg" />
+    <Content Include="Content\assets\img\doctors\news-image2.jpg" />
+    <Content Include="Content\assets\img\doctors\news-image3.jpg" />
+    <Content Include="Content\assets\img\doctors\slider1.jpg" />
+    <Content Include="Content\assets\img\doctors\slider2.jpg" />
+    <Content Include="Content\assets\img\doctors\slider3.jpg" />
+    <Content Include="Content\assets\img\doctors\team-image1.jpg" />
+    <Content Include="Content\assets\img\doctors\team-image2.jpg" />
+    <Content Include="Content\assets\img\doctors\team-image3.jpg" />
+    <Content Include="Content\assets\img\google_play.svg" />
+    <Content Include="Content\assets\img\images\about-medicine.png" />
+    <Content Include="Content\assets\img\images\client.png" />
+    <Content Include="Content\assets\img\images\contact-bg.jpg" />
+    <Content Include="Content\assets\img\images\email.png" />
+    <Content Include="Content\assets\img\images\envelope-blue.png" />
+    <Content Include="Content\assets\img\images\fb.png" />
+    <Content Include="Content\assets\img\images\hero-bg.jpg" />
+    <Content Include="Content\assets\img\images\instagram.png" />
+    <Content Include="Content\assets\img\images\istockphoto-1006430612-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1015246304-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1032712136-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1080378686-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1133624833-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1144801743-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1144992388-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1150384618-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1167824451-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1178263882-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1184200244-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1201116068-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1203011083-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1203011090-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1205850790-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1215678087-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1218905934-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1222476826-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1223789411-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1225849762-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1227487019-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1248083964-1024x1024.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1270095995-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1272101078-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1277148425-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1278834619-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1280506452-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1283285457-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1288995619-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1292012176-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1295782888-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1297936018-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1311429423-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1311515424-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1313795585-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1314693417-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1320127070-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1320799464-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1326215389-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1340715286-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1341693363-640x640.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1342275996-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1345875024-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1346066792-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1346675527-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1346718776-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1348008311-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1355302972-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1371843359-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1383880970-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1384901226-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1387152896-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1388324716-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1392376001-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1393709660-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1395386886-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1396308301-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1412949530-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1414367565-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1419358653-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1436624925-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1438599465-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1439901267-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1443049058-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1443050107-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1455018058-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1457213598-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1470862406-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1478711302-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1488874743-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1490640358-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1493520286-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1497528974-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1500043821-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1526799953-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-1749809914-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-2023972397-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-934866046-612x612.jpg" />
+    <Content Include="Content\assets\img\images\istockphoto-945007384-612x612.jpg" />
+    <Content Include="Content\assets\img\images\left-arrow-blue.png" />
+    <Content Include="Content\assets\img\images\left-arrow.png" />
+    <Content Include="Content\assets\img\images\location-blue.png" />
+    <Content Include="Content\assets\img\images\logo.png" />
+    <Content Include="Content\assets\img\images\medicine.png" />
+    <Content Include="Content\assets\img\images\medicines.jpg" />
+    <Content Include="Content\assets\img\images\menu.png" />
+    <Content Include="Content\assets\img\images\next.png" />
+    <Content Include="Content\assets\img\images\p-1.jpg" />
+    <Content Include="Content\assets\img\images\p-2.jpg" />
+    <Content Include="Content\assets\img\images\p-3.jpg" />
+    <Content Include="Content\assets\img\images\p-4.jpg" />
+    <Content Include="Content\assets\img\images\p-5.jpg" />
+    <Content Include="Content\assets\img\images\p-6.jpg" />
+    <Content Include="Content\assets\img\images\prev.png" />
+    <Content Include="Content\assets\img\images\quote.png" />
+    <Content Include="Content\assets\img\images\right-arrow-blue.png" />
+    <Content Include="Content\assets\img\images\right-arrow.png" />
+    <Content Include="Content\assets\img\images\search-icon.png" />
+    <Content Include="Content\assets\img\images\telephone-symbol-button.png" />
+    <Content Include="Content\assets\img\images\twitter.png" />
+    <Content Include="Content\assets\img\images\user.png" />
+    <Content Include="Content\assets\img\istockphoto-1310475310-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1331801708-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1333877205-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1352489912-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1367142090-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1395886240-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1403976463-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1408160015-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1415408740-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1500048212-640x640.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1582547147-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1661384253-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1749809914-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-1929337889-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-2023972397-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-2131412523-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-2149880815-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-2152258775-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-2171140915-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-466825342-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-484900905-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-496972049-612x612.jpg" />
+    <Content Include="Content\assets\img\istockphoto-943375326-612x612.jpg" />
+    <Content Include="Content\assets\img\mobile_app.png" />
+    <Content Include="Content\assets\img\p-1.jpg" />
+    <Content Include="Content\assets\img\p-2.jpg" />
+    <Content Include="Content\assets\img\p-3.jpg" />
+    <Content Include="Content\assets\img\p-4.jpg" />
+    <Content Include="Content\assets\img\p-5.jpg" />
+    <Content Include="Content\assets\img\p-6.jpg" />
+    <Content Include="Content\assets\img\person\1.jpg" />
+    <Content Include="Content\assets\img\person\2.jpg" />
+    <Content Include="Content\assets\img\person\3.jpg" />
+    <Content Include="Content\assets\img\person\4.jpg" />
+    <Content Include="Content\assets\img\person\5.jpg" />
+    <Content Include="Content\assets\img\person\6.jpg" />
+    <Content Include="Content\assets\img\person\img1.jpg" />
+    <Content Include="Content\assets\img\person\person_1.jpg" />
+    <Content Include="Content\assets\img\person\person_2.jpg" />
+    <Content Include="Content\assets\img\person\person_3.jpg" />
+    <Content Include="Content\assets\img\person\person_4.jpg" />
+    <Content Include="Content\assets\img\product_01.png" />
+    <Content Include="Content\assets\img\product_02.png" />
+    <Content Include="Content\assets\img\product_03.png" />
+    <Content Include="Content\assets\img\product_04.png" />
+    <Content Include="Content\assets\img\product_05.png" />
+    <Content Include="Content\assets\img\product_06.png" />
+    <Content Include="Content\assets\img\product_07_large.png" />
+    <Content Include="Content\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\assets\js\google-maps.js" />
+    <Content Include="Content\assets\js\jquery-3.5.1.min.js" />
+    <Content Include="Content\assets\js\theme.js" />
+    <Content Include="Content\assets\vendor\animate\animate.css" />
+    <Content Include="Content\assets\vendor\owl-carousel\ajax-loader.gif" />
+    <Content Include="Content\assets\vendor\owl-carousel\css\owl.carousel.css" />
+    <Content Include="Content\assets\vendor\owl-carousel\js\owl.carousel.js" />
+    <Content Include="Content\assets\vendor\owl-carousel\js\owl.carousel.min.js" />
+    <Content Include="Content\assets\vendor\wow\wow.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\assets\fonts\maicons.eot" />
+    <Content Include="Content\assets\fonts\maicons.ttf" />
+    <Content Include="Content\assets\fonts\maicons.woff" />
+    <Content Include="Content\assets\img\doctors\istockphoto-1767382699-1024x1024.webp" />
+    <Content Include="Content\assets\img\images\istockphoto-1767382699-1024x1024.webp" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\doctors.cshtml" />
+    <Content Include="Views\Home\blog.cshtml" />
+    <Content Include="Views\Home\lab.cshtml" />
+    <Content Include="Views\Home\pharmacy.cshtml" />
+    <Content Include="Views\Home\bussines.cshtml" />
+    <Content Include="Views\Home\Education.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51230</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51230/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
